@@ -22,7 +22,7 @@ const Sidebar = ({children}) => {
                 </div>
             </Link>
             <p className='text-xs'>Dashboard</p>
-            <Link href='/customers'>
+            <Link href='/inventory'>
                 <div className='bg-gray-100 hover:bg-gray-300 text-black rounded-lg p-3 my-4'>
                     <RxPerson size={20} />
                 </div>
