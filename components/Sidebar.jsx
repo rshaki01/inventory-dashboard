@@ -14,7 +14,7 @@ const Sidebar = ({children}) => {
                 <div className='bg-purple-800 text-white rounded-lg p-3'>
                     <RxSketchLogo size={20} />
                 </div>
-            </Link>
+            </Link> 
             <span className='border-b-[1px] border-gray-200 w-full p-2'></span>
             <Link href='/'>
                 <div className='bg-gray-100 hover:bg-gray-300 text-black rounded-lg p-3 my-4'>
@@ -27,18 +27,21 @@ const Sidebar = ({children}) => {
                     <RxPerson size={20} />
                 </div>
             </Link>
+            <p className='text-xs'>Inventory</p>
             <Link href='/gang'>
                 <div className='bg-gray-100 hover:bg-gray-300 text-black rounded-lg p-3 my-4'>
                     <HiOutlineShoppingBag size={20} />
                 </div>
             </Link>
+            <p className='text-xs'>Expenses</p>
             <Link href='/'>
                 <div className='bg-gray-100 hover:bg-gray-300 text-black rounded-lg p-3 my-4'>
                     <FiSettings size={20} />
                 </div>
             </Link>
+            <p className='text-xs'>Sales</p>
         </div>
-        
+
       </div>
       <main className='ml-20 w-full'>{children}</main>
       </div>
