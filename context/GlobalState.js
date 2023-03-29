@@ -3,7 +3,7 @@ import AppReducer from './AppReducer';
 
 // Initial State
 const initialState = {
-    inventory: [],
+    inventory: [{name: 'test'}, {name: 'test2'}],
 }
 
 // Create context
