@@ -1,12 +1,11 @@
 import React from 'react'
 
-const AddForm = () => {
+const AddForm = ({onClose}) => {
   return (
     <div className='my-2 p-2 grid grid-cols-3 items-center'>
-        <p>yo</p>
-        <p>yo</p>
-        <p>yo</p>
-
+        <form>
+            <input type="text" />
+        </form>
 
     </div>
   )
