@@ -9,9 +9,6 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    colors: {
-      modalBg: '#161819',
-    },
     extend: {},
   },
   plugins: [],
