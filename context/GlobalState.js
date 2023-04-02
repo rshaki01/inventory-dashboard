@@ -44,11 +44,18 @@ export const GlobalProvider = ({children}) => {
     function addExpense(expense) {
         dispatch({
             type: 'ADD_EXPENSE',
-            payload: item
+            payload: expense
         })
     }
 
-    return (<GlobalContext.Provider value={{inventory: state.inventory, sales: state.sales, expenses: state.expenses, addItem, sellItem, deleteItem}}>
+    function deleteExpense(expense) {
+        dispatch({
+            type: 'DELETE_EXPENSE',
+            payload: expense
+        })
+    }
+
+    return (<GlobalContext.Provider value={{inventory: state.inventory, sales: state.sales, expenses: state.expenses, addItem, sellItem, deleteItem, addExpense, deleteExpense}}>
         {children}
     </GlobalContext.Provider>)
 
