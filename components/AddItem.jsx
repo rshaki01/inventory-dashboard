@@ -2,7 +2,7 @@ import React, {useState, useContext} from 'react';
 import { GlobalContext } from '@/context/GlobalState';
 
 
-const AddForm = ({open, onClose}) => {
+const AddItem = ({open, onClose}) => {
 
   const {addItem} = useContext(GlobalContext);
 
@@ -71,4 +71,4 @@ const AddForm = ({open, onClose}) => {
   )
 }
 
-export default AddForm
+export default AddItem

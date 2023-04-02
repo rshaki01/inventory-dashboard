@@ -1,8 +1,7 @@
 import React from 'react';
 import { GlobalContext } from '@/context/GlobalState';
 import { useContext, useState } from 'react';
-import AddForm from '../components/AddForm';
-
+import AddItem from '@/components/AddItem';
 
 const inventory = () => {
 
@@ -25,7 +24,7 @@ const inventory = () => {
             </div>
         </div>
         <div className='px-4'>
-          <p>Manage your inventory of shoes, clothes, and collectibles.</p>
+          <p>Manage your inventory by adding, deleting, selling or exporting to a CSV.</p>
           <div className='w-full my-4 p-4 border rounded-lg bg-white h-[65vh] overflow-scroll'>
             <div className='my-3 p-2 grid md:grid-cols-6 sm:grid-cols-3 grid-cols-2 items-center shadow-md'>
               <span className='font-semibold'>Name</span>
@@ -37,15 +36,17 @@ const inventory = () => {
             </div>
             <ul>
               {inventory.map((item, index) => (
-                <li key={item.name} className='my-3 p-2 grid grid-cols-6 rounded-md hover:bg-blue-200'>
+                <li key={item.name} className='my-3 p-2 grid grid-cols-6 rounded-md hover:bg-blue-200 items-center'>
                   <span>{item.name}</span>
                   <span>{item.purchasePrice}</span>
                   <span>{item.listingPrice}</span>
                   <span>{item.quantity}</span>
                   <span>{index}</span>
-                  <span>
-                    <button onClick={() => sellItem(item)}>Sell</button>
-                    <button onClick={() => deleteItem(item)}>Delete</button>
+                  <span className="flex items-center gap-2">
+                    <button className="bg-emerald-500 hover:bg-emerald-400 text-white py-1 px-2 rounded"
+                    onClick={() => sellItem(item)}>Sell</button>
+                    <button className="bg-rose-600 hover:bg-rose-500 text-white py-1 px-2 rounded"
+                    onClick={() => deleteItem(item)}>Delete</button>
                   </span>
                 </li>
               ))}
@@ -55,7 +56,7 @@ const inventory = () => {
         {sales.map((sale) => (
           <li key={sale.name}>{sale.name}</li>
         ))}
-        <AddForm open={showModal} onClose={() => setShowModal(false)}/>
+        <AddItem open={showModal} onClose={() => setShowModal(false)}/>
     </div>
   )
 }

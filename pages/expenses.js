@@ -31,7 +31,7 @@ const expenses = () => {
             </div>
             <ul>
               {expenses.map((expense, index) => (
-                <li key={expense.id} className='my-3 p-2 grid grid-cols-6 rounded-md hover:bg-blue-200'>
+                <li key={expense.id} className='my-3 p-2 grid grid-cols-4 rounded-md hover:bg-blue-200'>
                   <span>{expense.expenseName}</span>
                   <span>{expense.expenseAmount}</span>
                   <span>{expense.dateAdded}</span>

@@ -13,7 +13,7 @@ const AddExpense = ({open, onClose}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const id = Math.floor(Math.random() * 100000) + 1;
-        let newExpense = {id, expenseName, expenseAmount};
+        let newExpense = {id, expenseName, expenseAmount, dateAdded};
         addExpense(newExpense);
         setExpenseName('');
         setExpenseAmount(0);
