@@ -3,7 +3,9 @@ import AppReducer from './AppReducer';
 
 // Initial State
 const initialState = {
-    inventory: [{name: 'test'}, {name: 'test2'}],
+    inventory: [{name: 'test', purchasePrice: 50, listingPrice: 80, quantity: 1}],
+    sales: [],
+    expenses: [],
 }
 
 // Create context
@@ -22,7 +24,22 @@ export const GlobalProvider = ({children}) => {
         })
     }
 
-    return (<GlobalContext.Provider value={{inventory: state.inventory}}>
+    function deleteItem(item) {
+        dispatch({
+            type: 'DELETE_ITEM',
+            payload: item
+        })
+    }
+
+    function sellItem(item) {
+        dispatch({
+            type: 'SELL_ITEM',
+            payload: item
+        })
+        deleteItem(item);
+    }
+
+    return (<GlobalContext.Provider value={{inventory: state.inventory, sales: state.sales, expenses: state.expenses, addItem, sellItem, deleteItem}}>
         {children}
     </GlobalContext.Provider>)
 

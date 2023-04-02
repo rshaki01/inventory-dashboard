@@ -1,20 +1,16 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
 import { GlobalContext } from '@/context/GlobalState';
-import { useContext, useState } from 'react';
-import AddForm from '../components/AddForm';
+import AddExpense from '@/components/AddExpense';
 
+const expenses = () => {
 
-const inventory = () => {
-
-  const { inventory, sales, sellItem, deleteItem } = useContext(GlobalContext);
   const [showModal, setShowModal] = useState(false);
-
-
+  const { expenses } = useContext(GlobalContext);
 
   return (
     <div className='bg-gray-100 min-h-screen'>
         <div className='flex justify-between p-4'>
-            <p className='text-2xl'>Inventory</p>
+            <p className='text-2xl'>Expenses</p>
             <div>
               <button onClick={() => setShowModal(true)} className="bg-transparent hover:bg-purple-500 text-purple-600 font-semibold hover:text-white py-2 px-4 mr-2 border border-purple-600 hover:border-transparent rounded">
                 +
@@ -25,7 +21,7 @@ const inventory = () => {
             </div>
         </div>
         <div className='px-4'>
-          <p>Manage your inventory of shoes, clothes, and collectibles.</p>
+          <p>Manage your expenses by adding, deleting, or exporting to a CSV.</p>
           <div className='w-full my-4 p-4 border rounded-lg bg-white h-[65vh] overflow-scroll'>
             <div className='my-3 p-2 grid md:grid-cols-6 sm:grid-cols-3 grid-cols-2 items-center shadow-md'>
               <span className='font-semibold'>Name</span>
@@ -36,28 +32,25 @@ const inventory = () => {
               <span className='font-semibold'>Action</span>              
             </div>
             <ul>
-              {inventory.map((item, index) => (
-                <li key={item.name} className='my-3 p-2 grid grid-cols-6 rounded-md hover:bg-blue-200'>
-                  <span>{item.name}</span>
-                  <span>{item.purchasePrice}</span>
-                  <span>{item.listingPrice}</span>
-                  <span>{item.quantity}</span>
+              {expenses.map((expense, index) => (
+                <li key={expense.name} className='my-3 p-2 grid grid-cols-6 rounded-md hover:bg-blue-200'>
+                  <span>{expense.name}</span>
+                  <span>{expense.purchasePrice}</span>
+                  <span>{expense.listingPrice}</span>
+                  <span>{expense.quantity}</span>
                   <span>{index}</span>
                   <span>
-                    <button onClick={() => sellItem(item)}>Sell</button>
-                    <button onClick={() => deleteItem(item)}>Delete</button>
+                    <button>Delete</button>
                   </span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
-        {sales.map((sale) => (
-          <li key={sale.name}>{sale.name}</li>
-        ))}
-        <AddForm open={showModal} onClose={() => setShowModal(false)}/>
+        <AddExpense open={showModal} onClose={() => setShowModal(false)}/>
+        {/* <AddForm open={showModal} onClose={() => setShowModal(false)}/> */}
     </div>
   )
 }
 
-export default inventory
+export default expenses

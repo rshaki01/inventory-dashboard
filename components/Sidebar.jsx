@@ -4,6 +4,8 @@ import Image from 'next/image'
 import {RxSketchLogo, RxDashboard, RxPerson} from 'react-icons/rx'
 import {HiOutlineShoppingBag} from 'react-icons/hi'
 import {FiSettings} from 'react-icons/fi'
+import {MdAttachMoney} from 'react-icons/md'
+
 
 const Sidebar = ({children}) => {
   return (
@@ -28,15 +30,15 @@ const Sidebar = ({children}) => {
                 </div>
             </Link>
             <p className='text-xs'>Inventory</p>
-            <Link href='/gang'>
+            <Link href='/expenses'>
                 <div className='bg-gray-100 hover:bg-gray-300 text-black rounded-lg p-3 my-4'>
                     <HiOutlineShoppingBag size={20} />
                 </div>
             </Link>
             <p className='text-xs'>Expenses</p>
-            <Link href='/'>
+            <Link href='/sales'>
                 <div className='bg-gray-100 hover:bg-gray-300 text-black rounded-lg p-3 my-4'>
-                    <FiSettings size={20} />
+                    <MdAttachMoney size={20} />
                 </div>
             </Link>
             <p className='text-xs'>Sales</p>
