@@ -15,8 +15,8 @@ const sales = () => {
             </div>
             <div className='px-4'>
               <p>Manage your sales of shoes, clothes, and collectibles.</p>
-              <div className='w-full my-4 p-4 border rounded-lg bg-white h-[65vh] overflow-scroll'>
-                <div className='my-3 p-2 grid md:grid-cols-7 sm:grid-cols-3 grid-cols-2 items-center'>
+              <div className='w-full my-4 p-4 border rounded-lg bg-white h-[75vh] overflow-scroll'>
+                <div className='p-2 grid md:grid-cols-7 sm:grid-cols-3 grid-cols-2 items-center shadow-md'>
                   <span className='font-semibold'>Name</span>
                   <span className='font-semibold'>Purchase Price</span>
                   <span className='font-semibold'>Listing Price</span>
@@ -27,7 +27,7 @@ const sales = () => {
                 </div>
                 <ul>
                   {sales.map((sale) => (
-                    <li key={sale.name} className='my-3 p-2 grid grid-cols-7'>
+                    <li key={sale.name} className='my-3 p-2 grid grid-cols-7 items-center'>
                       <span>{sale.name}</span>
                       <span>{sale.purchasePrice}</span>
                       <span>{sale.listingPrice}</span>
@@ -35,7 +35,8 @@ const sales = () => {
                       <span>0</span>
                       <span>Date</span>
                       <span>
-                        <button onClick={() => deleteItem(item)}>Delete</button>
+                        <button className="bg-rose-600 hover:bg-rose-500 text-white py-1 px-2 rounded" 
+                        onClick={() => deleteItem(item)}>Delete</button>
                       </span>
                     </li>
                   ))}

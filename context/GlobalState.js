@@ -3,7 +3,15 @@ import AppReducer from './AppReducer';
 
 // Initial State
 const initialState = {
-    inventory: [{name: 'test', purchasePrice: 50, listingPrice: 80, quantity: 1}],
+    inventory: [
+        {id: 0, name: 'Cropped Hoodie', purchasePrice: 56, listingPrice: 90, quantity: 1},
+        {id: 1, name: 'Waxed Denim', purchasePrice: 64, listingPrice: 120, quantity: 50},
+        {id: 2,name: 'Waxed Canvas Jacket', purchasePrice: 60, listingPrice: 100, quantity: 30},
+        {id: 3, name: 'Chore Jacket', purchasePrice: 59, listingPrice: 95, quantity: 40},
+        {id: 4, name: 'Mohair Beanies', purchasePrice: 25, listingPrice: 45, quantity: 25},
+        {id: 5, name: 'Twill Cargos', purchasePrice: 63, listingPrice: 110, quantity: 50},
+        {id: 6, name: 'Nylon Cargos', purchasePrice: 50, listingPrice: 90, quantity: 10},
+    ],
     sales: [],
     expenses: [],
 }
@@ -55,7 +63,16 @@ export const GlobalProvider = ({children}) => {
         })
     }
 
-    return (<GlobalContext.Provider value={{inventory: state.inventory, sales: state.sales, expenses: state.expenses, addItem, sellItem, deleteItem, addExpense, deleteExpense}}>
+    // Delete Sale
+
+    function deleteSale(sale) {
+        dispatch({
+            type: 'DELETE_SALE',
+            payload: sale
+        })
+    }
+
+    return (<GlobalContext.Provider value={{inventory: state.inventory, sales: state.sales, expenses: state.expenses, addItem, sellItem, deleteItem, addExpense, deleteExpense, deleteSale}}>
         {children}
     </GlobalContext.Provider>)
 

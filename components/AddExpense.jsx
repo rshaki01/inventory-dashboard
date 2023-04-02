@@ -12,6 +12,16 @@ const AddExpense = ({open, onClose}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!expenseName) {
+          alert('Please add an expense name!')
+          return;
+        } else if (expenseAmount <= 0) {
+          alert('Please add an amount greater than 0')
+          return;
+        } else if (!dateAdded) {
+          alert('Please add a purchase date!')
+          return;
+        }
         const id = Math.floor(Math.random() * 100000) + 1;
         let newExpense = {id, expenseName, expenseAmount, dateAdded};
         addExpense(newExpense);
@@ -32,17 +42,17 @@ const AddExpense = ({open, onClose}) => {
               <form onSubmit={handleSubmit}>
                 <label className="block mb-2 text-slate-400">Name</label>
                 <input className="rounded-lg border border-gray-700 bg-transparent w-full p-2 text-slate-300 hover:bg-slate-800" type="text" 
-                value={expenseName} onChange={(e) => setExpenseName(e.target.value)}/>
+                value={expenseName} onChange={(e) => setExpenseName((parseInt(e.target.value)))}/>
                 <div className='grid grid-cols-1 md:grid-cols-2 my-2 gap-3'>
                   <div className="">
                     <label className="block mb-2 text-slate-400">Amount ($)</label>
                     <input className="rounded-lg border border-gray-700 bg-transparent w-full p-2 text-slate-300 hover:bg-slate-800" type="number"
-                    value={expenseAmount} onChange={(e) => setExpenseAmount(e.target.value)}/>
+                    value={expenseAmount} onChange={(e) => setExpenseAmount((parseInt(e.target.value)))}/>
                   </div>
                   <div>
                     <label className="block mb-2 text-slate-400">Date</label>
                     <input className="rounded-lg border border-gray-700 bg-transparent w-full p-2 text-slate-300 hover:bg-slate-800" type="date" 
-                    value={dateAdded} onChange={(e) => setDateAdded(e.target.value)}/>
+                    value={dateAdded} onChange={(e) => setDateAdded((e.target.value))}/>
                   </div>
                 </div>
                 <input type="submit" className="mt-8 w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" value="Add Expense"/>

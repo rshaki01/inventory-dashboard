@@ -25,8 +25,8 @@ const inventory = () => {
         </div>
         <div className='px-4'>
           <p>Manage your inventory by adding, deleting, selling or exporting to a CSV.</p>
-          <div className='w-full my-4 p-4 border rounded-lg bg-white h-[65vh] overflow-scroll'>
-            <div className='my-3 p-2 grid md:grid-cols-6 sm:grid-cols-3 grid-cols-2 items-center shadow-md'>
+          <div className='w-full my-4 p-4 border rounded-lg bg-white h-[75vh] overflow-scroll'>
+            <div className='p-2 grid md:grid-cols-6 sm:grid-cols-3 grid-cols-2 items-center shadow-md'>
               <span className='font-semibold'>Name</span>
               <span className='font-semibold'>Purchase Price</span>
               <span className='font-semibold'>Listing Price</span>
@@ -38,8 +38,8 @@ const inventory = () => {
               {inventory.map((item, index) => (
                 <li key={item.name} className='my-3 p-2 grid grid-cols-6 rounded-md hover:bg-blue-200 items-center'>
                   <span>{item.name}</span>
-                  <span>{item.purchasePrice}</span>
-                  <span>{item.listingPrice}</span>
+                  <span>${item.purchasePrice}</span>
+                  <span>${item.listingPrice}</span>
                   <span>{item.quantity}</span>
                   <span>{index}</span>
                   <span className="flex items-center gap-2">
@@ -53,9 +53,6 @@ const inventory = () => {
             </ul>
           </div>
         </div>
-        {sales.map((sale) => (
-          <li key={sale.name}>{sale.name}</li>
-        ))}
         <AddItem open={showModal} onClose={() => setShowModal(false)}/>
     </div>
   )
