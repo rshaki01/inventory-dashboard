@@ -2,11 +2,13 @@ import React from 'react';
 import { GlobalContext } from '@/context/GlobalState';
 import { useContext, useState } from 'react';
 import AddItem from '@/components/AddItem';
+import ViewItem from '@/components/ViewItem';
 
 const inventory = () => {
 
   const { inventory, sales, sellItem, deleteItem } = useContext(GlobalContext);
   const [showModal, setShowModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
 
 
 
@@ -36,18 +38,21 @@ const inventory = () => {
             </div>
             <ul>
               {inventory.map((item, index) => (
-                <li key={item.name} className='my-3 p-2 grid grid-cols-6 rounded-md hover:bg-blue-200 items-center'>
+                <li key={item.name} className='my-3 p-2 grid grid-cols-6 rounded-md items-center'>
                   <span>{item.name}</span>
                   <span>${item.purchasePrice}</span>
                   <span>${item.listingPrice}</span>
                   <span>{item.quantity}</span>
                   <span>{index}</span>
                   <span className="flex items-center gap-2">
+                  <button className="bg-rose-600 hover:bg-rose-500 text-white py-1 px-2 rounded"
+                    onClick={() => setShowEditModal(true)}>Edit</button>
                     <button className="bg-emerald-500 hover:bg-emerald-400 text-white py-1 px-2 rounded"
                     onClick={() => sellItem(item)}>Sell</button>
                     <button className="bg-rose-600 hover:bg-rose-500 text-white py-1 px-2 rounded"
                     onClick={() => deleteItem(item)}>Delete</button>
                   </span>
+                  <ViewItem open={showEditModal} item={item} onClose={() => setShowEditModal(false)}/>
                 </li>
               ))}
             </ul>
