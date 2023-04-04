@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import TopCards from '../components/TopCards'
 import LineChart from '../components/LineChart'
 import RecentOrders from '@/components/RecentOrders'
+import StatCard from '@/components/StatCard'
 
 
 export default function Home() {
@@ -16,7 +17,16 @@ export default function Home() {
       </Head>
       <main className='bg-gray-100 min-h-screen'>
          <Header />
-         <TopCards />
+         <div className='grid lg:grid-cols-10 gap-6 p-4 px-8'>
+          <StatCard type='inventory'/>
+          <StatCard type='num-inventory'/>
+          <StatCard type='sales'/>
+          <StatCard type='net-profit'/>
+          <StatCard type='net-profit'/>
+
+
+         </div>
+         {/* <TopCards /> */}
          <div className='grid md:grid-cols-3 gap-4 p-4'>
           <LineChart />
           <RecentOrders />

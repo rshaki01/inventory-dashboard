@@ -32,7 +32,7 @@ const sales = () => {
                       <span>{sale.purchasePrice}</span>
                       <span>{sale.listingPrice}</span>
                       <span>{sale.quantity}</span>
-                      <span>0</span>
+                      <span>{(sale.listingPrice - sale.purchasePrice) * sale.quantity}</span>
                       <span>Date</span>
                       <span>
                         <button className="bg-rose-600 hover:bg-rose-500 text-white py-1 px-2 rounded" 
