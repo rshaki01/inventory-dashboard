@@ -53,7 +53,7 @@ const EditExpense = ({expense, open, onClose}) => {
             <div>
               <label className="block mb-2 text-slate-400">Date</label>
               <input className="rounded-lg border border-gray-700 bg-transparent w-full p-2 text-slate-300 hover:bg-slate-800" type="date" 
-               value={expense.dateAdded}/>
+               value={dateAdded} onChange={(e) => (setDateAdded(e.target.value))}/>
             </div>
           </div>
           <input type="submit" className="mt-8 w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" value="Save Changes"/>

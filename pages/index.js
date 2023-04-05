@@ -20,8 +20,9 @@ export default function Home() {
           <StatCard type='inventory'/>
           <StatCard type='num-inventory'/>
           <StatCard type='sales'/>
+          <StatCard type='expenses'/>
           <StatCard type='net-profit'/>
-          <StatCard type='net-profit'/>
+
 
 
          </div>

@@ -1,11 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
-import {RxSketchLogo, RxDashboard, RxPerson} from 'react-icons/rx'
-import {HiOutlineShoppingBag} from 'react-icons/hi'
+import {RxSketchLogo, RxDashboard} from 'react-icons/rx'
+import {HiOutlineClipboardList} from 'react-icons/hi'
 import {FiSettings} from 'react-icons/fi'
 import {MdAttachMoney} from 'react-icons/md'
-
+import {BsBoxes} from 'react-icons/bs'
 
 const Sidebar = ({children}) => {
     
@@ -27,13 +26,13 @@ const Sidebar = ({children}) => {
             <p className='text-xs'>Dashboard</p>
             <Link href='/inventory'>
                 <div className='bg-gray-100 hover:bg-gray-300 text-black rounded-lg p-3 my-4'>
-                    <RxPerson size={20} />
+                    <BsBoxes size={20} />
                 </div>
             </Link>
             <p className='text-xs'>Inventory</p>
             <Link href='/expenses'>
                 <div className='bg-gray-100 hover:bg-gray-300 text-black rounded-lg p-3 my-4'>
-                    <HiOutlineShoppingBag size={20} />
+                    <HiOutlineClipboardList size={20} />
                 </div>
             </Link>
             <p className='text-xs'>Expenses</p>
@@ -47,7 +46,7 @@ const Sidebar = ({children}) => {
         <div className='items-center'>
             <Link href='/settings'>
                 <div className='bg-gray-100 hover:bg-gray-300 text-black rounded-lg p-3 my-4'>
-                    <MdAttachMoney size={20} />
+                    <FiSettings size={20} />
                 </div>
             </Link>
             <p className='text-xs'>Settings</p>

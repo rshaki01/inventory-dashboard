@@ -13,7 +13,9 @@ const initialState = {
         {id: 6, name: 'Nylon Cargos', purchasePrice: 50, listingPrice: 90, quantity: 10},
     ],
     sales: [],
-    expenses: [],
+    expenses: [
+        {id: 0, expenseName: 'Shopify', expenseAmount: 44.90, dateAdded: "1-1-1"}
+    ],
 }
 
 // Create context
