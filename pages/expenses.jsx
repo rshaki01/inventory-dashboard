@@ -24,10 +24,10 @@ const expenses = () => {
         <div className='px-4'>
           <p>Manage your expenses by adding, deleting, or exporting to a CSV.</p>
           <div className='w-full my-4 p-4 border rounded-lg bg-white h-[75vh] overflow-scroll'>
-            <div className='p-2 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 items-center shadow-md'>
+            <div className='p-2 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-3 items-center shadow-md'>
               <span className='font-semibold'>Name</span>
               <span className='font-semibold'>Amount</span>
-              <span className='font-semibold'>Purchase Date</span>
+              <span className='font-semibold md:block hidden'>Purchase Date</span>
               <span className='font-semibold'>Action</span>              
             </div>
             <ul>
