@@ -8,11 +8,12 @@ import {MdAttachMoney} from 'react-icons/md'
 
 
 const Sidebar = ({children}) => {
+    
   return (
     <div className='flex'>
       <div className='fixed w-20 lg:w-30 bg-white h-screen p-4 flex flex-col justify-between border-r-[1px]' >
         <div className='flex flex-col items-center'>
-            <Link href='/'>
+            <Link href='/test'>
                 <div className='bg-purple-800 text-white rounded-lg p-3'>
                     <RxSketchLogo size={20} />
                 </div>
