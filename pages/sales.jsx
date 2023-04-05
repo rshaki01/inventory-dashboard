@@ -1,5 +1,7 @@
 import React, {useContext} from 'react';
 import { GlobalContext } from '@/context/GlobalState';
+import { TbTrashFilled } from 'react-icons/tb'
+import Sale from '@/components/Sale';
 
 const sales = () => {
 
@@ -27,18 +29,7 @@ const sales = () => {
                 </div>
                 <ul>
                   {sales.map((sale) => (
-                    <li key={sale.name} className='my-3 p-2 grid grid-cols-7 items-center'>
-                      <span>{sale.name}</span>
-                      <span>{sale.purchasePrice}</span>
-                      <span>{sale.listingPrice}</span>
-                      <span>{sale.quantity}</span>
-                      <span>{(sale.listingPrice - sale.purchasePrice) * sale.quantity}</span>
-                      <span>Date</span>
-                      <span>
-                        <button className="bg-rose-600 hover:bg-rose-500 text-white py-1 px-2 rounded" 
-                        onClick={() => deleteItem(item)}>Delete</button>
-                      </span>
-                    </li>
+                    <Sale sale={sale}/>
                   ))}
                 </ul>
               </div>

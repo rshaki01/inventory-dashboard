@@ -7,9 +7,8 @@ import Item from '@/components/Item';
 const inventory = () => {
 
 
-  const { inventory, sales, sellItem, deleteItem } = useContext(GlobalContext);
+  const { inventory } = useContext(GlobalContext);
   const [showModal, setShowModal] = useState(false);
-  const [showEditModal, setShowEditModal] = useState(false);
 
   return (
     <div className='bg-gray-100 min-h-screen'>

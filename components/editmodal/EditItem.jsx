@@ -3,8 +3,8 @@ import { GlobalContext } from '@/context/GlobalState';
 
 const EditItem = ({item, open, onClose}) => {
 
+    if (!open) return null;
     const {editItem} = useContext(GlobalContext);
-
     const [name, setName] = useState(item.name);
     const [purchasePrice, setPurchasePrice] = useState(item.purchasePrice);
     const [listingPrice, setListingPrice] = useState(item.listingPrice)
@@ -17,9 +17,6 @@ const EditItem = ({item, open, onClose}) => {
         editItem(newItem);
         onClose();
     }
-
-
-    if (!open) return null;
 
     return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">

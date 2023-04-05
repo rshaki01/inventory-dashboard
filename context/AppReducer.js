@@ -36,5 +36,16 @@ export default (state, action) => {
               };
         case 'DELETE_SALE':
             return {...state, sales: state.sales.filter(sale => sale.id != action.payload.id)}
+        case 'EDIT_SALE':
+            return {
+                ...state,
+                sales: state.sales.map(sale => {
+                  if (sale.id === action.payload.id) {
+                    return action.payload;
+                  } else {
+                    return sale;
+                  }
+                })
+              };
     }
 }
