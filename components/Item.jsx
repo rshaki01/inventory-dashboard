@@ -4,7 +4,7 @@ import { GlobalContext } from '@/context/GlobalState';
 
 const Item = ({item}) => {
 
-  const { inventory, sellItem, deleteItem } = useContext(GlobalContext);
+  const { sellItem, deleteItem } = useContext(GlobalContext);
   const [showEditModal, setShowEditModal] = useState(false);   
 
   return (
