@@ -47,6 +47,13 @@ export const GlobalProvider = ({children}) => {
         deleteItem(item);
     }
 
+    function editItem(item) {
+        dispatch({
+            type: 'EDIT_ITEM',
+            payload: item
+        })
+    }
+
     // Expense actions
 
     function addExpense(expense) {
@@ -72,7 +79,7 @@ export const GlobalProvider = ({children}) => {
         })
     }
 
-    return (<GlobalContext.Provider value={{inventory: state.inventory, sales: state.sales, expenses: state.expenses, addItem, sellItem, deleteItem, addExpense, deleteExpense, deleteSale}}>
+    return (<GlobalContext.Provider value={{inventory: state.inventory, sales: state.sales, expenses: state.expenses, addItem, sellItem, deleteItem, editItem, addExpense, deleteExpense, deleteSale}}>
         {children}
     </GlobalContext.Provider>)
 

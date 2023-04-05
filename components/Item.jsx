@@ -8,7 +8,7 @@ const Item = ({item}) => {
   const [showEditModal, setShowEditModal] = useState(false);   
 
   return (
-    <li key={item.name} className='my-3 p-2 grid grid-cols-6 rounded-md items-center'>
+    <li key={item.name} className='my-3 p-2 grid grid-cols-6 rounded-md items-center hover:bg-black hover:bg-opacity-20'>
         <span>{item.name}</span>
         <span>${item.purchasePrice}</span>
         <span>${item.listingPrice}</span>
