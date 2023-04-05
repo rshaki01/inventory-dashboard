@@ -42,7 +42,7 @@ const AddExpense = ({open, onClose}) => {
               <form onSubmit={handleSubmit}>
                 <label className="block mb-2 text-slate-400">Name</label>
                 <input className="rounded-lg border border-gray-700 bg-transparent w-full p-2 text-slate-300 hover:bg-slate-800" type="text" 
-                value={expenseName} onChange={(e) => setExpenseName((parseInt(e.target.value)))}/>
+                value={expenseName} onChange={(e) => setExpenseName(e.target.value)}/>
                 <div className='grid grid-cols-1 md:grid-cols-2 my-2 gap-3'>
                   <div className="">
                     <label className="block mb-2 text-slate-400">Amount ($)</label>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { GlobalContext } from '@/context/GlobalState';
 import { useContext, useState } from 'react';
-import AddItem from '@/components/AddItem';
+import AddItem from '@/components/addmodal/AddItem';
 import ViewItem from '@/components/ViewItem';
 
 const inventory = () => {

@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import ViewItem from './ViewItem';
+import EditItem from './editmodal/EditItem';
 import { GlobalContext } from '@/context/GlobalState';
 
 const Item = ({item}) => {
@@ -22,7 +22,7 @@ const Item = ({item}) => {
         <button className="bg-rose-600 hover:bg-rose-500 text-white py-1 px-2 rounded"
         onClick={() => deleteItem(item)}>Delete</button>
         </span>
-        <ViewItem open={showEditModal} item={item} onClose={() => setShowEditModal(false)}/>
+        <EditItem open={showEditModal} item={item} onClose={() => setShowEditModal(false)}/>
     </li>
   )
 }

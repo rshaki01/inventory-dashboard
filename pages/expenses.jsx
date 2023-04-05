@@ -1,6 +1,6 @@
 import React, {useState, useContext} from 'react';
 import { GlobalContext } from '@/context/GlobalState';
-import AddExpense from '@/components/AddExpense';
+import AddExpense from '@/components/addmodal/AddExpense';
 
 const expenses = () => {
 
