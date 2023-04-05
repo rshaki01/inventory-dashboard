@@ -44,6 +44,14 @@ const Sidebar = ({children}) => {
             </Link>
             <p className='text-xs'>Sales</p>
         </div>
+        <div className='items-center'>
+            <Link href='/settings'>
+                <div className='bg-gray-100 hover:bg-gray-300 text-black rounded-lg p-3 my-4'>
+                    <MdAttachMoney size={20} />
+                </div>
+            </Link>
+            <p className='text-xs'>Settings</p>
+        </div>
 
       </div>
       <main className='ml-20 w-full'>{children}</main>

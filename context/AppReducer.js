@@ -23,7 +23,18 @@ export default (state, action) => {
              return {...state, expenses: [...state.expenses, action.payload]}
         case 'DELETE_EXPENSE':
              return {...state, expenses: state.expenses.filter(expense => expense.id != action.payload.id)}
-        case 'DELETE_EXPENSE':
+        case 'EDIT_EXPENSE':
+            return {
+                ...state,
+                expenses: state.expenses.map(expense => {
+                  if (expense.id === action.payload.id) {
+                    return action.payload;
+                  } else {
+                    return expense;
+                  }
+                })
+              };
+        case 'DELETE_SALE':
             return {...state, sales: state.sales.filter(sale => sale.id != action.payload.id)}
     }
 }

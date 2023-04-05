@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Header from '../components/Header'
-import TopCards from '../components/TopCards'
 import LineChart from '../components/LineChart'
 import RecentOrders from '@/components/RecentOrders'
 import StatCard from '@/components/StatCard'
@@ -26,10 +25,9 @@ export default function Home() {
 
 
          </div>
-         {/* <TopCards /> */}
          <div className='grid md:grid-cols-3 gap-4 p-4'>
           <LineChart />
-          <RecentOrders />
+          {/* <RecentOrders /> */}
 
          </div>
       </main>

@@ -15,6 +15,7 @@ const EditItem = ({item, open, onClose}) => {
         let id = item.id
         let newItem = {id, name, purchasePrice, listingPrice, quantity};
         editItem(newItem);
+        onClose();
     }
 
 
