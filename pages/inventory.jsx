@@ -2,7 +2,6 @@ import React from 'react';
 import { GlobalContext } from '@/context/GlobalState';
 import { useContext, useState } from 'react';
 import AddItem from '@/components/addmodal/AddItem';
-import ViewItem from '@/components/ViewItem';
 import Item from '@/components/Item';
 
 const inventory = () => {
@@ -28,12 +27,12 @@ const inventory = () => {
         <div className='px-4'>
           <p>Manage your inventory by adding, deleting, selling or exporting to a CSV.</p>
           <div className='w-full my-4 p-4 border rounded-lg bg-white h-[75vh] overflow-scroll'>
-            <div className='p-2 grid md:grid-cols-6 sm:grid-cols-3 grid-cols-2 items-center shadow-md'>
-              <span className='font-semibold'>Name</span>
-              <span className='font-semibold'>Purchase Price</span>
-              <span className='font-semibold'>Listing Price</span>
-              <span className='font-semibold'>Quantity</span>
-              <span className='font-semibold'>Purchase Date</span>
+            <div className='p-2 grid lg:grid-cols-6 md:grid-cols-5 sm:grid-cols-4 grid-cols-3 items-center shadow-md'>
+              <span className='font-semibold sm:col-span-1 col-span-2'>Name</span>
+              <span className='font-semibold sm:block hidden'>Purchase Price</span>
+              <span className='font-semibold sm:block hidden'>Listing Price</span>
+              <span className='font-semibold md:block hidden'>Quantity</span>
+              <span className='font-semibold lg:block hidden'>Purchase Date</span>
               <span className='font-semibold'>Action</span>              
             </div>
             <ul>

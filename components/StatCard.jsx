@@ -71,7 +71,7 @@ const StatCard = ({type}) => {
   return (
     <div className='col-span-2 bg-white border p-4 flex justify-between rounded-xl'>
         <div className='flex flex-col items-center justify-even w-full py-2'>
-          <p className='text-2xl font-bold'>{data.isMoney && '$'}{data.amount}</p>
+          <p className='text-2xl font-bold'>{data.isMoney && '$'}{data.isMoney ? data.amount.toFixed(2) : data.amount}</p>
           <p className='text-gray-600'>{data.title}</p>
         </div>
         
